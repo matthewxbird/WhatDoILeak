@@ -48,6 +48,7 @@ namespace LeakySite
                 context.Response.Headers.Add("Content-Security-Policy", "default-src 'self' 'unsafe-inline';");
                 context.Response.Headers.Add("X-Frame-Options", "SAMEORIGIN");
                 context.Response.Headers.Add("X-XSS-Protection", "X-XSS-Protection: 1; mode=block");
+                context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
                 await next();
             });
 
