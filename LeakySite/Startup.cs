@@ -50,6 +50,7 @@ namespace LeakySite
                 context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
                 context.Response.Headers.Add("Referrer-Policy", "no-referrer");
                 context.Response.Headers.Add("Feature-Policy", "autoplay 'none'; camera 'none'; encrypted-media 'none'; fullscreen 'none'; geolocation 'none'; microphone 'none'; midi 'none'; payment 'none'; vr 'none';");
+                context.Response.Headers.Add("Expect-CT", "enforce, max-age=30");
                 await next();
             });
 
