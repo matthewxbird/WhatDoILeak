@@ -45,7 +45,7 @@ namespace LeakySite
 
             app.Use(async (context, next) =>
             {
-                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self' 'unsafe-inline';");
+                context.Response.Headers.Add("Content-Security-Policy", "block-all-mixed-content; default-src 'none'; script-src 'self' 'unsafe-inline'; img-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; manifest-src 'self'");
                 context.Response.Headers.Add("X-Frame-Options", "SAMEORIGIN");
                 context.Response.Headers.Add("X-XSS-Protection", "X-XSS-Protection: 1; mode=block");
                 context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
